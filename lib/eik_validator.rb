@@ -39,7 +39,7 @@ module EikValidator
     def check_validity(eik)
       control_digit = eik.chars.last.to_i
       eik_multipliers(eik).each_with_index do |set, index|
-        remainder = calculate_sum(eik, set) % 11r
+        remainder = calculate_sum(eik, set) % 11
         return true if not remainder == 10 and remainder == control_digit
         return true if index == 1 and remainder == 10 and control_digit == 0
       end
