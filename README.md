@@ -36,7 +36,10 @@ validates :field_name, eik: true
 
 ## Changelog
 
-### [0.0.3] - 2015-02-06
+### [0.0.4] - 2015-02-06
+- Fixed a dependency typo.
+
+### [0.0.3] - 2015-02-06 [YANKED]
 - Added ActiveModel validation support.
 
 ### [0.0.1] - 2015-02-05
