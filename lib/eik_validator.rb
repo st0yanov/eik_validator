@@ -1,4 +1,5 @@
 require "eik_validator/version"
+require 'active_model'
 
 module EikValidator
 
@@ -66,4 +67,20 @@ module EikValidator
   class EikLengthError < StandardError
   end
 
+end
+
+module ActiveModel
+  module Validations
+    class EikValidator < EachValidator
+      def validate_each(record, attribute, value)
+        begin
+          unless Object::EikValidator.validate(value)
+            record.errors[attribute] << (options[:message] || "Invalid EIK.")
+          end
+        rescue
+          record.errors[attribute] << (options[:message] || "Invalid EIK.")
+        end
+      end
+    end
+  end
 end

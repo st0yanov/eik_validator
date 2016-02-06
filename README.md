@@ -29,6 +29,19 @@ EikValidator.validate('1234567891234') # => false
 EikValidator.validate('1213961230342') # => true
 ```
 
+Or if you want to use it inside a model:
+```ruby
+validates :field_name, eik: true
+```
+
+## Changelog
+
+### [0.0.3] - 2015-02-06
+- Added ActiveModel validation support.
+
+### [0.0.1] - 2015-02-05
+- Initial release.
+
 ## Contributing
 
 This is my first gem ever so suggestions are more that appreciated.
